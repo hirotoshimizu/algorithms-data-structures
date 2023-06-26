@@ -43,9 +43,44 @@ Queueは、FIFO(first-in first-out)の順で要素の順序となる。
 
 #### Tree
 
+Tree は nodes を用いたデータ構造。
+- Treeには root node が存在する
+- Root node には 0 もしくは複数の子がいる。
+- 子 node は 0 もしくは複数の子がいる。
+
+Tree は cycle を含まない。
+Node は特定の順序がある場合とない場合がある。また Value はどんなタイプの物にでもなりえる。
+
 #### Binary Tree
 
+Binary Tree は Tree データ構造で、それぞれの Node が left child と right child の最大で2つ持つ。
+- Full Binary Trees
+    それぞれの node が 0もしくは2つの子を持つ。1つの子しかないというのは存在しない。
+- Perfect Binary Tree
+    すべての内部ノードが2つの子を持ち、すべての leave nodes が同じレベルになる。
+- Complete Tree
+    last レベル以外では node で満たされている。 last レベルでは左から順に node が追加される。
+
 #### Binary Search Tree
+Binary Search Tree は Binary Tree で、node が特定の並び順になっている。
+left descendents <= n < all right descendents
+全ての node n で上記のようになる必要がある。
+
+Balanced binary tree
+| Operation | Time Complexity |
+| :-: | :-: |
+| Access | O(log(n)) |
+| Search | O(log(n)) |
+| Insert | O(log(n)) |
+| Remove | O(log(n)) |
+
+Skewed binary tree(worst case)
+| Operation | Time Complexity |
+| :-: | :-: |
+| Access | O(n) |
+| Search | O(n) |
+| Insert | O(n) |
+| Remove | O(n) |
 
 #### Heap
 Tree ベースの data structure。
