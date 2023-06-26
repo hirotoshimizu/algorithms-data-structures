@@ -19,8 +19,27 @@ next ポインタは次の Node のレファレンス。
 | Insert / Remove from end | O(n) |
 
 #### Stack
+Stackは、要素を追加する push と 一番最後に追加された要素を削除する pop というオペレーションから成り立つ、要素のコレクション。
+Stackは、LIFO(last-in first-out)の順で要素の順序となる。
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Access | O(N) |
+| Search | O(N) |
+| Insert | O(1) |
+| Remove | O(1) |
 
 #### Queue
+Queueは、要素を追加する Enqueue と 最初に追加された要素から削除する Dequeue から成り立つ、要素のコレクション。
+Queueは、FIFO(first-in first-out)の順で要素の順序となる。
+
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Access | O(N) |
+| Search | O(N) |
+| Insert | O(1) |
+| Remove | O(1) |
 
 #### Tree
 
