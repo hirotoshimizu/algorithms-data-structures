@@ -82,12 +82,42 @@ Skewed binary tree(worst case)
 | Insert | O(n) |
 | Remove | O(n) |
 
-#### Heap
+#### Heap / Priority Queue
 Tree ベースの data structure。
-部分的にのデータがソートされている。
 maximum, minimum value を取得するときに使う。
 
-Max Heap, Min Heap
+Heapは、Heapプロパティを満たす特殊なツリーベースの構造データ構造です。
+AがBの親ノードの場合、ノードAのキー(値)は、同じ順序付けがHeap全体にわたって、適用されてノードBのキーに対して順序付けされます。
+ノードのキーは重複があっても良い。
+Heapは、さらに「Max Heap」または「Min Heap」に分類できます。 
+
+
+Heap構造を保つには下記に従う必要がある。
+1. Structure property
+    Min Heap は Complete binary tree(Last level以外ではノードで埋まっている。但し、Last level は左から埋める必要がある。)
+2. Order property
+    Max Heapでは、親ノードのキーは常に子ノードのキー以上であり、最も高いキーはルートノードにあります。
+    Min Heapでは、親ノードのキーは子ノードのキー以下であり、最も低いキーはルート ノードにあります。
+
+parent = i // 2
+left child = i * 2
+right child = i * 2 + 1
+
+push で値を入れた時、親よりも小さい間、スワップする。
+
+pop は、
+1. leaf level の一番右の要素を root node に設定する。
+2. 1.で設定した値が所定の位置になるまで、次の level の小さい値とスワップする。
+
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Heapify | O(n) |
+| push | O(log(n)) |
+| pop | O(log(n)) |
+| get min/max | O(1) |
+
+
 
 #### Hashing
 
