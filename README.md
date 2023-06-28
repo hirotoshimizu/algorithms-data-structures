@@ -2,44 +2,85 @@
 
 ### Data Structures
 
+#### Array
+
+Static Arrays
+
+| Operation | Time Complexity | Note |
+| :-: | :-: | :-: |
+| Access | O(1) | |
+| Insert | O(n) | arrayの最後にinsertする場合は O(1) |
+| Remove | O(n) | arrayの最後をremoveする場合は O(1)|
+
+Dynamic Arrays
+
+Insert をする際、次の空きスペースを探す。
+しかし、スペースが空いていない場合、元のサイズの2倍の新しい配列に値をコピーして配列の容量不足を解消する。
+その際メモリ内のアドレスには新しいアドレスが割り当てられる。
+
+| Operation | Time Complexity | Note |
+| :-: | :-: | :-: |
+| Access | O(1) | |
+| Insert | O(n) | arrayの最後にinsertする場合は O(1) |
+| Remove | O(n) | arrayの最後をremoveする場合は O(1)|
+
+
+Access が O(1)な理由
+Address of ith Index = Base address + offset = Address of 0th Index + i × (size of one element)
+
+#### String
+
+| Operation | Time Complexity | Note |
+| :-: | :-: | :-: |
+| Access | O(1) | |
+| Search | O(n) | |
+| Insert | O(n) | |
+| Remove | O(n) | |
+
 #### Linked List
-Linked List は連続した nodes を表現するデータ構造
+Linked List は連続した nodes を表現するデータ構造。
 Node には value と next ポインタが含まれる。
 next ポインタは次の Node のレファレンス。
+
+Arrayとは異なり、memoryに連続して配置されていない。
+
 最後の Node は next ポインタが NULL なので、Linked List の最後と判断出来る。
 - Singly-linked list それぞれの node は次の node にポインタを向けている。
 - Doubly-linked list それぞれの node は previous node と next node にポインタを持っている。
 
-| Operation | Time Complexity |
-| :-: | :-: |
-| Access | O(N) |
-| Search | O(N) |
-| Insert / Remove from beginning | O(1) |
-| Insert / Remove from middle | O(N) |
-| Insert / Remove from end | O(n) |
+| Operation | Time Complexity | Note |
+| :-: | :-: | :-: |
+| Access | O(n) | |
+| Search | O(n) | |
+| Insert | O(1) | 目的の位置にノードへの参照があると仮定した場合 |
+| Remove | O(1) | 目的の位置にノードへの参照があると仮定した場合 |
+
 
 #### Stack
 Stackは、要素を追加する push と 一番最後に追加された要素を削除する pop というオペレーションから成り立つ、要素のコレクション。
 Stackは、LIFO(last-in first-out)の順で要素の順序となる。
 
-| Operation | Time Complexity |
-| :-: | :-: |
-| Access | O(N) |
-| Search | O(N) |
-| Insert | O(1) |
-| Remove | O(1) |
+| Operation | Time Complexity | Note |
+| :-: | :-: | :-: |
+| Access | O(n) | |
+| Search | O(n) | |
+| Push | O(1) | |
+| Pop | O(1) | |
+| Peek/Top | O(1) | 一番上の要素のレファレンスを返す |
 
 #### Queue
 Queueは、要素を追加する Enqueue と 最初に追加された要素から削除する Dequeue から成り立つ、要素のコレクション。
 Queueは、FIFO(first-in first-out)の順で要素の順序となる。
 
+Queueの実装には Array, Stack, Linked List が使われる。
+
 
 | Operation | Time Complexity |
 | :-: | :-: |
-| Access | O(N) |
-| Search | O(N) |
-| Insert | O(1) |
-| Remove | O(1) |
+| Access | O(n) |
+| Search | O(n) |
+| Enqueue | O(1) |
+| Dequeue | O(1) |
 
 #### Tree
 
@@ -84,7 +125,7 @@ Skewed binary tree(worst case)
 
 #### Heap / Priority Queue
 Tree ベースの data structure。
-maximum, minimum value を取得するときに使う。
+max, min value を取得するときに使う。
 
 Heapは、Heapプロパティを満たす特殊なツリーベースの構造データ構造です。
 AがBの親ノードの場合、ノードAのキー(値)は、同じ順序付けがHeap全体にわたって、適用されてノードBのキーに対して順序付けされます。
@@ -121,7 +162,65 @@ pop は、
 
 #### Hashing
 
+Hashmap は内部で配列を使用して実装されるのが最も一般的。
+
+```Python
+hashmap["fish"] = "Tuna"
+```
+
+hash function によって keyである、 fish を integer に変換し、
+Hash map にセットする。
+
+Hash map から値を取得する時も、 hash function を使い、fish を integer に変換し、
+Hash map から該当の integer を探し、値を取得する。
+
+<table>
+  <tr>
+    <th colspan="2">HashMap</th>
+  </tr>
+  <tr>
+    <td>Index</td>
+    <td>key, Value</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>{fish: Tune}</td>
+  </tr>
+</table>
+
+Hash collision が発生した場合、
+- [Chaining](https://en.wikipedia.org/wiki/Hash_table#Separate_chaining)
+    Linked listを使うことにより、複数の key-value ペアを同じ index 内に保存できる。
+- [Open Addressing](https://en.wikipedia.org/wiki/Open_addressing)
+    オープン アドレッシングの背後にある考え方は、1 つのインデックスに複数のキーと値のペアを格納しないように、次に利用可能なスロットを見つけることです。 この手法は、衝突の数が少ない場合、チェーン化と比較してより効率的です。 ただし、ここでの制限は、テーブル内のエントリの総数が配列のサイズによって制限されることです。
+
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Insert | O(1) |
+| Remove | O(1) |
+| Search | O(1) |
+
 #### Graph
+Tree はグラフの一種である。しかし、全てのグラフが Tree ではない。
+Tree はサイクルのない connected graphである。
+
+グラフは nodes の集合で、それらの間には edges がある。
+
+グラフは directed か undirected のどちらかのグラフになる。
+directed edges は一方通行の道のようなもので、
+undirected edges は双方向道路のようなもの。
+
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| DFS | O(&#124;V&#124; + &#124;E&#124;) |
+| BFS | O(&#124;V&#124; + &#124;E&#124;) |
+| Topological Sort | O(&#124;V&#124; + &#124;E&#124;) |
+| Dijkstra's Algorithm | O(&#124;V&#124;^2) |
 
 ### Algorithms
-
