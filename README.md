@@ -1,10 +1,12 @@
 # Algorithms and Data Structures
 
-### Data Structures
+## Data Structures
 
-#### Array
+### Array
 
 Static Arrays
+
+最初や、真ん中の値を削除する際は、削除した以降の値をシフトする必要があるので、O(n) になる。
 
 | Operation | Time Complexity | Note |
 | :-: | :-: | :-: |
@@ -15,7 +17,7 @@ Static Arrays
 Dynamic Arrays
 
 Insert をする際、次の空きスペースを探す。
-しかし、スペースが空いていない場合、元のサイズの2倍の新しい配列に値をコピーして配列の容量不足を解消する。
+しかし、スペースが空いていない場合、元のサイズの2倍の新しい配列に値をコピーして配列の容量不足を解消する。この処理は O(n) になる。
 その際メモリ内のアドレスには新しいアドレスが割り当てられる。
 
 | Operation | Time Complexity | Note |
@@ -28,7 +30,7 @@ Insert をする際、次の空きスペースを探す。
 Access が O(1)な理由
 Address of ith Index = Base address + offset = Address of 0th Index + i × (size of one element)
 
-#### String
+### String
 
 | Operation | Time Complexity | Note |
 | :-: | :-: | :-: |
@@ -37,7 +39,7 @@ Address of ith Index = Base address + offset = Address of 0th Index + i × (size
 | Insert | O(n) | |
 | Remove | O(n) | |
 
-#### Linked List
+### Linked List
 Linked List は連続した nodes を表現するデータ構造。
 Node には value と next ポインタが含まれる。
 next ポインタは次の Node のレファレンス。
@@ -56,7 +58,7 @@ Arrayとは異なり、memoryに連続して配置されていない。
 | Remove | O(1) | 目的の位置にノードへの参照があると仮定した場合 |
 
 
-#### Stack
+### Stack
 Stackは、要素を追加する push と 一番最後に追加された要素を削除する pop というオペレーションから成り立つ、要素のコレクション。
 Stackは、LIFO(last-in first-out)の順で要素の順序となる。
 
@@ -68,7 +70,7 @@ Stackは、LIFO(last-in first-out)の順で要素の順序となる。
 | Pop | O(1) | |
 | Peek/Top | O(1) | 一番上の要素のレファレンスを返す |
 
-#### Queue
+### Queue
 Queueは、要素を追加する Enqueue と 最初に追加された要素から削除する Dequeue から成り立つ、要素のコレクション。
 Queueは、FIFO(first-in first-out)の順で要素の順序となる。
 
@@ -82,7 +84,7 @@ Queueの実装には Array, Stack, Linked List が使われる。
 | Enqueue | O(1) |
 | Dequeue | O(1) |
 
-#### Tree
+### Tree
 
 Tree は nodes を用いたデータ構造。
 - Treeには root node が存在する
@@ -104,6 +106,7 @@ Binary Tree は Tree データ構造で、それぞれの Node が left child �
 
 #### Binary Search Tree
 Binary Search Tree は Binary Tree で、node が特定の並び順になっている。
+また、Binary Search Tree では値の重複はないとされるのが一般的。
 left descendents <= n < all right descendents
 全ての node n で上記のようになる必要がある。
 
@@ -123,7 +126,28 @@ Skewed binary tree(worst case)
 | Insert | O(n) |
 | Remove | O(n) |
 
-#### Heap / Priority Queue
+#### Depth-First Search(DFS)
+
+深さを優先した探索。
+
+探索の仕方には3つある。
+- Inorder
+- Preorder
+- Postorder
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Traversal | O(n) |
+
+#### Breadth-First-Search(BFS)
+
+Queueを使い、階層ごとに横断する。
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Traversal | O(n) |
+
+### Heap / Priority Queue
 Tree ベースの data structure。
 max, min value を取得するときに使う。
 
@@ -160,7 +184,7 @@ pop は、
 
 
 
-#### Hashing
+### Hashing
 
 Hashmap は内部で配列を使用して実装されるのが最も一般的。
 
@@ -205,7 +229,7 @@ Hash collision が発生した場合、
 | Remove | O(1) |
 | Search | O(1) |
 
-#### Graph
+### Graph
 Tree はグラフの一種である。しかし、全てのグラフが Tree ではない。
 Tree はサイクルのない connected graphである。
 
@@ -215,6 +239,8 @@ Tree はサイクルのない connected graphである。
 directed edges は一方通行の道のようなもので、
 undirected edges は双方向道路のようなもの。
 
+E <= V^2
+
 
 | Operation | Time Complexity |
 | :-: | :-: |
@@ -223,4 +249,4 @@ undirected edges は双方向道路のようなもの。
 | Topological Sort | O(&#124;V&#124; + &#124;E&#124;) |
 | Dijkstra's Algorithm | O(&#124;V&#124;^2) |
 
-### Algorithms
+## Algorithms
