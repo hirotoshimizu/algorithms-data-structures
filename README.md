@@ -192,7 +192,7 @@ Hash map から該当の integer を探し、値を取得する。
   </tr>
   <tr>
     <td>1</td>
-    <td>{fish: Tune}</td>
+    <td>{fish: Tuna}</td>
   </tr>
 </table>
 
@@ -235,7 +235,7 @@ E <= V^2
 
 ### Graph Algorithms
 
-#### Depth-First Search(DFS)
+### Depth-First Search(DFS)
 
 深さを優先した探索。
 
@@ -248,10 +248,20 @@ E <= V^2
 | :-: | :-: |
 | Traversal | O(n) |
 
-#### Breadth-First-Search(BFS)
+
+- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/blob/main/tree/dfs.py)
+- [Graph Traversals]()
+- [Matrix Traversals]()
+
+### Breadth-First-Search(BFS)
 
 Queueを使い、階層ごとに横断する。
 
 | Operation | Time Complexity |
 | :-: | :-: |
 | Traversal | O(n) |
+
+
+- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/blob/main/tree/bfs.py)
+- [Graph Traversals]()
+- [Matrix Traversals]()
