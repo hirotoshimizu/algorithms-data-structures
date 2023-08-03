@@ -15,7 +15,7 @@ Static Arrays
 | Remove | O(n) | arrayの最後をremoveする場合は O(1)|
 
 Dynamic Arrays
-
+String
 Insert をする際、次の空きスペースを探す。
 しかし、スペースが空いていない場合、元のサイズの2倍の新しい配列に値をコピーして配列の容量不足を解消する。この処理は O(n) になる。
 その際メモリ内のアドレスには新しいアドレスが割り当てられる。
@@ -126,26 +126,6 @@ Skewed binary tree(worst case)
 | Insert | O(n) |
 | Remove | O(n) |
 
-#### Depth-First Search(DFS)
-
-深さを優先した探索。
-
-探索の仕方には3つある。
-- Inorder
-- Preorder
-- Postorder
-
-| Operation | Time Complexity |
-| :-: | :-: |
-| Traversal | O(n) |
-
-#### Breadth-First-Search(BFS)
-
-Queueを使い、階層ごとに横断する。
-
-| Operation | Time Complexity |
-| :-: | :-: |
-| Traversal | O(n) |
 
 ### Heap / Priority Queue
 Tree ベースの data structure。
@@ -250,3 +230,28 @@ E <= V^2
 | Dijkstra's Algorithm | O(&#124;V&#124;^2) |
 
 ## Algorithms
+
+### Sorting
+
+### Graph Algorithms
+
+#### Depth-First Search(DFS)
+
+深さを優先した探索。
+
+探索の仕方には3つある。
+- Inorder
+- Preorder
+- Postorder
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Traversal | O(n) |
+
+#### Breadth-First-Search(BFS)
+
+Queueを使い、階層ごとに横断する。
+
+| Operation | Time Complexity |
+| :-: | :-: |
+| Traversal | O(n) |
