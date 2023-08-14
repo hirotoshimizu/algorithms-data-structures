@@ -262,6 +262,6 @@ Queueを使い、階層ごとに横断する。
 | Traversal | O(n) |
 
 
-- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/tree/main/tree/dfs)
+- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/blob/main/tree/bfs.py)
 - [Graph Traversals]()
 - [Matrix Traversals]()
