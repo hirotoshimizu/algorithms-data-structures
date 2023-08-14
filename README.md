@@ -249,7 +249,7 @@ E <= V^2
 | Traversal | O(n) |
 
 
-- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/blob/main/tree/dfs.py)
+- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/tree/main/tree/dfs)
 - [Graph Traversals]()
 - [Matrix Traversals]()
 
@@ -262,6 +262,6 @@ Queueを使い、階層ごとに横断する。
 | Traversal | O(n) |
 
 
-- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/blob/main/tree/bfs.py)
+- [Binary Tree Traversals](https://github.com/hirotoshimizu/algorithms-data-structures/tree/main/tree/dfs)
 - [Graph Traversals]()
 - [Matrix Traversals]()
